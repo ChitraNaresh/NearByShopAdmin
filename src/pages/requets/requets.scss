@@ -1,0 +1,11 @@
+@import "../../app.scss";
+
+.main-page {
+  display: flex;
+  .requests-page-main{
+    flex-grow: 1;
+    .requests-page{
+      padding: 20px;
+    }
+  }
+}

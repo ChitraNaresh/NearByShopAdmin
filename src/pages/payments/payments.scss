@@ -1,0 +1,11 @@
+@import "../../app.scss";
+
+.main-page {
+  display: flex;
+  .payments-page-main{
+    flex-grow: 1;
+    .payments-page{
+      padding: 20px;
+    }
+  }
+}

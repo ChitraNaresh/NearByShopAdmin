@@ -1,0 +1,57 @@
+@import "../../app.scss";
+
+.side-bar {
+  width: 15vw;
+  height: 100vh;
+  border-right: 2px solid #f2f3f5;
+  position: relative;
+  .logo-card {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    gap: 10px;
+    border-bottom: 2px solid #f2f3f5;
+    margin: 0px 3px;
+    img {
+      height: 30px;
+      width: 45px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: #2368ae;
+    }
+  }
+  .side-navbar {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    .each-tab-card {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 25px;
+      cursor: pointer;
+      p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #2368ae;
+      }
+    }
+  }
+  .logout-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 25px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    p {
+      color: #2368ae;
+    }
+  }
+}

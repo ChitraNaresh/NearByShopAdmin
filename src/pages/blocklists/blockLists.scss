@@ -1,0 +1,11 @@
+@import "../../app.scss";
+
+.main-page {
+  display: flex;
+  .block-lists-page-main{
+    flex-grow: 1;
+    .block-lists-page{
+        padding:20px;
+    }
+  }
+}

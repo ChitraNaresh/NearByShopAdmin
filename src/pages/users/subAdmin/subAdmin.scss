@@ -1,0 +1,11 @@
+@import "../../../app.scss";
+
+.main-page {
+  display: flex;
+  .sub-admin-page-main {
+    flex-grow: 1;
+    .sub-admin-page {
+      padding: 20px;
+    }
+  }
+}
