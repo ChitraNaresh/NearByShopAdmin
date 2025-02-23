@@ -99,7 +99,7 @@ const Categories = () => {
         </div>
         <div className="image-card">
           <div className="image-default-div">
-            {singleCategory.image && <img src={singleCategory.image} />}
+            {singleCategory.imageUrl && <img src={singleCategory.imageUrl} />}
           </div>
           <p>{singleCategory?.name}</p>
         </div>
