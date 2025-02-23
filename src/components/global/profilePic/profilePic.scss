@@ -1,0 +1,13 @@
+@import "../../../app.scss";
+
+.profile-pic-div {
+    display: flex;
+    justify-content: center;
+  .profile-pic {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    background-color: $border;
+  }
+}

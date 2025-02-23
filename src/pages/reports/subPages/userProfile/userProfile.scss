@@ -1,0 +1,67 @@
+@import "../../../../app.scss";
+
+.main-page {
+  display: flex;
+  .report-user-page-main {
+    flex-grow: 1;
+    .report-user-page {
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 20px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .first-action-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        h3 {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 30px;
+          color: $secondary-color;
+        }
+        .action-btns-card {
+          display: flex;
+          gap: 10px;
+          button {
+            font-family: $font-family;
+            letter-spacing: 1px;
+            padding: 8px 10px;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 22.5px;
+            border-radius: 4px;
+            &:nth-child(2) {
+              background-color: #bb2124;
+              color: $white-color;
+            }
+            &:nth-child(1) {
+              background-color: #f1f2f4;
+              color: $secondary-color;
+            }
+          }
+        }
+      }
+      .reported-users-list {
+        margin-top: 40px;
+        .tabs-card {
+          display: flex;
+          gap: 40px;
+          button {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16.8px;
+            letter-spacing: 0.005em;
+            padding-bottom: 6px;
+          }
+          .active-tab {
+            color: $primary-color;
+            border-bottom: 3px solid $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

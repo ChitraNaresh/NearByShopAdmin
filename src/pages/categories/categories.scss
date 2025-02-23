@@ -1,0 +1,101 @@
+@import "../../app.scss";
+
+@import "../../app.scss";
+
+.main-page {
+  display: flex;
+  .block-lists-page-main {
+    flex-grow: 1;
+    .block-lists-page {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-height: 92vh;
+      overflow-y: auto;
+      .create-button-card {
+        text-align: end;
+        button {
+          color: $primary-color;
+          padding: 6px 12px;
+          border: 2px solid $primary-color;
+          font-size: 16px;
+          font-weight: 500;
+          border-radius: 4px;
+        }
+      }
+      .all-packages-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .single-card {
+          border: 1px solid $secondary-color;
+          padding: 10px;
+          border-radius: 8px;
+        }
+      }
+      .all-sub-categories {
+        border: 2px solid $secondary-color;
+        margin: 10px;
+        padding: 20px;
+      }
+      .all-categories,
+      .all-sub-categories {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .single-sub-category {
+          padding: 10px;
+          .parent-category {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            border: 1px solid $border;
+            padding: 10px;
+            position: relative;
+            .edit-delete-icons-card{
+              position: absolute;
+              right: 20px;
+              top: 10px;
+              display: flex;
+              gap: 14px;
+              button{
+                img{
+                  height: 20px;
+                }
+              }
+            }
+            .image-card {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 10px;
+              p {
+                font-size: 14px;
+              }
+              .image-default-div {
+                background-color: $border;
+                height: 150px;
+                width: 150px;
+                border-radius: 8px;
+              }
+            }
+            p {
+              font-size: 14px;
+            }
+            .drop-down-btn {
+              margin-left: auto;
+              padding: 10px;
+              img {
+                height: 20px;
+              }
+            }
+            .drop-down-btn-active {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

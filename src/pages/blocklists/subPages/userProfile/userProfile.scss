@@ -1,0 +1,26 @@
+@import "../../../../app.scss";
+
+.main-page {
+  display: flex;
+  .blocked-user-page-main {
+    flex-grow: 1;
+    .button-card {
+      button {
+        background-color: #22bb33;
+        color: $white-color;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 22.5px;
+        height: 39px;
+        width: 72px;
+        border-radius: 4px;
+      }
+    }
+    .blocked-user-page {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+}

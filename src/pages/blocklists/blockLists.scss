@@ -2,10 +2,29 @@
 
 .main-page {
   display: flex;
-  .block-lists-page-main{
+  .block-lists-page-main {
     flex-grow: 1;
-    .block-lists-page{
-        padding:20px;
+    .block-lists-page {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .tabs-buttons {
+        display: flex;
+        gap: 46px;
+        button {
+          letter-spacing: 0.6px;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 14.4px;
+          color: $secondary-color;
+          padding-bottom: 5px;
+        }
+        .active-tab {
+          color: $primary-color;
+          border-bottom: 3px solid $primary-color;
+        }
+      }
     }
   }
 }

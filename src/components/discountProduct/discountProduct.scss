@@ -1,0 +1,48 @@
+@import "../../app.scss";
+
+.discount-product {
+  width: 40%;
+  flex-shrink: 0;
+  height: 240px;
+  background-color: #af52de;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  .product-pic {
+    width: 45%;
+    height: 100%;
+    background-color: $white-color;
+    border-radius: 10px;
+  }
+  .product-details {
+    .product-name {
+      color: $white-color;
+      font-size: 19.12px;
+      font-weight: 500;
+      line-height: 28.68px;
+    }
+    .product-location {
+      margin-top: 4px;
+      color: $white-color;
+      font-size: 15.94px;
+      font-weight: 400;
+      line-height: 23.9px;
+    }
+    .discount {
+      margin-top: 8px;
+      font-size: 22.31px;
+      font-weight: 600;
+      line-height: 33.47px;
+      color: $white-color;
+    }
+    .alert-message {
+      margin-top: 4px;
+      color: $white-color;
+      font-size: 15.94px;
+      font-weight: 400;
+      line-height: 23.9px;
+    }
+  }
+}

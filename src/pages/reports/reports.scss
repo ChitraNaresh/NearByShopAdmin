@@ -6,6 +6,25 @@
     flex-grow: 1;
     .reports-page{
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .tabs-buttons {
+        display: flex;
+        gap: 46px;
+        button {
+          letter-spacing: 0.6px;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 14.4px;
+          color: $secondary-color;
+          padding-bottom: 5px;
+        }
+        .active-tab {
+          color: $primary-color;
+          border-bottom: 3px solid $primary-color;
+        }
+      }
     }
   }
 }

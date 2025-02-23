@@ -1,0 +1,36 @@
+@import "../../app.scss";
+
+.about-business-card {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .card-heading {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: $secondary-color;
+  }
+  .details-card {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    .social-media-links {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          letter-spacing: -0.5px;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

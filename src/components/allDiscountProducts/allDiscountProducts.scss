@@ -1,0 +1,20 @@
+@import "../../app.scss";
+
+.all-discount-products {
+  padding: 0px;
+  .card-heading {
+    color: $secondary-color;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 14px;
+  }
+  .discount-products-container{
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+  }
+}

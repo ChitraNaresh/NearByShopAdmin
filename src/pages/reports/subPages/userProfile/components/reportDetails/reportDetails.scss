@@ -1,0 +1,58 @@
+@import "../../../../../../app.scss";
+
+.report-details {
+  padding: 0px;
+  margin-top: 20px;
+  .user-name-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid $border;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    .user-pic {
+      height: 46px;
+      width: 46px;
+      background-color: $border;
+      border-radius: 23px;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      color: $secondary-color;
+    }
+  }
+  .chat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    .single-chat-message {
+      padding: 12px;
+      font-size: 16px !important;
+      font-weight: 400 !important;
+      line-height: 18.75px !important;
+      border-radius: 4px;
+      .time-stamp{
+        margin-top: 2px;
+        font-size: 10px;
+        margin-left: auto;
+        display: block;
+        text-align: end;
+      }
+    }
+    .left-align {
+      background-color: $border;
+      color: $secondary-color;
+      margin-right: auto;
+      max-width: 600px;
+    }
+    .right-align {
+      background-color: $primary-color;
+      color: $white-color;
+      margin-left: auto;
+      max-width: 600px;
+    }
+  }
+}

@@ -6,6 +6,20 @@
     flex-grow: 1;
     .sub-admin-page {
       padding: 20px;
+      .create-sub-admin-btn-card {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+        button {
+          background-color: $primary-color;
+          color: $white-color;
+          padding: 10px 12px;
+          border-radius: 6px;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 21px;
+        }
+      }
     }
   }
 }

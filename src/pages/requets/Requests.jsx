@@ -9,7 +9,7 @@ const Requests = () => {
     <div className="main-page">
       <Sidebar />
       <div className="requests-page-main">
-        <Navbar />
+        <Navbar type="requests"/>
         <div className="requests-page">
           <div className="table-card">
             <RequestsTable />
