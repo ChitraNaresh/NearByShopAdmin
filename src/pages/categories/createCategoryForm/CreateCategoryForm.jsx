@@ -25,6 +25,7 @@ const categoryCreationFields = [
 const categoryCreationDefaultFields = {
   name: "",
   description: "",
+  image: "",
 };
 
 const CreateCategoryForm = ({
@@ -135,6 +136,25 @@ const CreateCategoryForm = ({
     }
   }, [editCategoryData]);
 
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setCategoryCreationDetails((prev) => ({
+          ...prev,
+          image: reader.result,
+        }));
+      };
+      reader.onerror = (error) => {
+        console.error("Error reading file:", error);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  console.log(categoryCreationDetails)
+
   return (
     <div className="package-creation-popup">
       <div className="fields-container">
@@ -153,6 +173,14 @@ const CreateCategoryForm = ({
             </div>
           );
         })}
+        <div className="category-image-card">
+          <input type="file" onChange={handleFileChange}/>
+          {categoryCreationDetails.image ? (
+            <img src={categoryCreationDetails.image} alt="" />
+          ) : (
+            <div className="image-sample-card"></div>
+          )}
+        </div>
       </div>
       <div className="action-card">
         <button onClick={editCategoryData ? handleUpdate : handleSubmit}>

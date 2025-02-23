@@ -98,7 +98,9 @@ const Categories = () => {
           </button>
         </div>
         <div className="image-card">
-          <div className="image-default-div"></div>
+          <div className="image-default-div">
+            {singleCategory.image && <img src={singleCategory.image} />}
+          </div>
           <p>{singleCategory?.name}</p>
         </div>
         <p>{singleCategory?.description}</p>
