@@ -25,7 +25,7 @@ const categoryCreationFields = [
 const categoryCreationDefaultFields = {
   name: "",
   description: "",
-  image: "",
+  imageUrl: "",
 };
 
 const CreateCategoryForm = ({
@@ -143,7 +143,7 @@ const CreateCategoryForm = ({
       reader.onload = () => {
         setCategoryCreationDetails((prev) => ({
           ...prev,
-          image: reader.result,
+          imageUrl: reader.result,
         }));
       };
       reader.onerror = (error) => {
