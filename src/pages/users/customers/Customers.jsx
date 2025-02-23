@@ -9,7 +9,7 @@ const Customers = () => {
     <div className="main-page">
       <Sidebar />
       <div className="customers-page-main">
-        <Navbar />
+        <Navbar type="customer"/>
         <div className="customers-page">
           <div className="table-card">
             <CustomersTable />

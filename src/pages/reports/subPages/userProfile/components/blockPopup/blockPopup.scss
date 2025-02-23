@@ -1,0 +1,63 @@
+@import "../../../../../../app.scss";
+
+.block-popup {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+  backdrop-filter: blur(4px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .popup-card {
+    padding: 20px;
+    padding-top: 30px;
+    background-color: $white-color;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+    .cancel-image{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      color: $secondary-color;
+      text-align: center;
+      line-height: 100%;
+      margin-top: 5px;
+    }
+    .dropdowns-card {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .dropdown-div {
+        display: flex;
+        flex-direction: column;
+        gap:4px;
+      }
+    }
+    .btn-card {
+      display: flex;
+      justify-content: center;
+      button {
+        background-color: $primary-color;
+        color: $white-color;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 21px;
+        padding: 8px 10px;
+        border-radius: 4px;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../../app.scss";
+
+.single-product {
+  .product-image {
+    height: 220px;
+    width: 100%;
+    background-color: $border;
+    border-radius: 8px;
+    margin-bottom: 13px;
+  }
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    h3 {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 23.8px;
+      color: $secondary-color;
+    }
+    .prices-card {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      .discount-price {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 30.8px;
+        color: $secondary-color;
+      }
+      .actual-price {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        color: #cac4d0;
+        text-decoration: line-through;
+      }
+      .offer-percentage {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 19.6px;
+        color: $primary-color;
+      }
+    }
+    .location-card {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.44px;
+        color: $secondary-color;
+      }
+    }
+  }
+}

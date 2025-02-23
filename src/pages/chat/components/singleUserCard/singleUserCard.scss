@@ -1,0 +1,41 @@
+@import "../../../../app.scss";
+
+.single-user-card {
+  padding: 0px;
+  display: flex;
+  gap: 16px;
+  .user-profile {
+    width: 45px;
+    height: 45px;
+    background-color: $border;
+    border-radius: 22.5px;
+    flex-shrink: 0;
+  }
+  .user-details {
+    flex-grow: 1;
+    .user-details-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      .name {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 27px;
+        color: #1f1f1f;
+      }
+      .time {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 21px;
+        color: #616161;
+      }
+    }
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #616161;
+    }
+  }
+}

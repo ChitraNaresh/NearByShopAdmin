@@ -1,0 +1,113 @@
+@import "../../../../app.scss";
+
+.main-page {
+  display: flex;
+  .request-user-page-main {
+    flex-grow: 1;
+    .request-user-page {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+      .seller-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h3 {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 30px;
+          color: $secondary-color;
+        }
+        .seller-profile-details {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          .profile-pic-card {
+            flex-shrink: 0;
+            height: 150px;
+            width: 150px;
+            background-color: $border;
+            border-radius: 50%;
+          }
+          .seller-details-card {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            .single-detail {
+              display: flex;
+              gap: 8px;
+              align-items: center;
+              border: 2px solid $border;
+              padding: 5px 10px;
+              border-radius: 4px;
+              .label {
+                color: #cac4d0;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+              }
+              span {
+                color: #cac4d0;
+                font-size: 14px;
+                font-weight: 600;
+              }
+              .value {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 20px;
+                letter-spacing: -0.5px;
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+      .seller-uploaded-attachments {
+        .attachments-card-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          .attachment {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            p {
+              font-size: 16px;
+              font-weight: 500;
+              line-height: 24px;
+              color: $secondary-color;
+            }
+            .attachment-pic {
+              height: 250px;
+              width: 70%;
+              background-color: $border;
+              border-radius: 8px;
+            }
+          }
+        }
+        .action-btns {
+          margin-top: 40px;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          button {
+            height: 40px;
+            width: 100px;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 22.5px;
+            border-radius: 4px;
+            &:nth-child(2) {
+              background-color: #22BB33;
+              color: $white-color;
+            }
+            &:nth-child(1) {
+                background-color: #F2F2F2;
+                color: $secondary-color;
+              }
+          }
+        }
+      }
+    }
+  }
+}

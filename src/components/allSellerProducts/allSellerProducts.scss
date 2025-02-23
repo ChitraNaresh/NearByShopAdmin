@@ -1,0 +1,46 @@
+@import "../../app.scss";
+
+.all-seller-products {
+  padding: 0px;
+  .card-heading {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: $secondary-color;
+    margin-bottom: 13px;
+  }
+  .filter-card {
+    border: 2px solid $border;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 350px;
+    padding: 0px 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    input {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 22px;
+      color: $secondary-color;
+      height: 40px;
+      width: 100%;
+      border: none;
+      outline: none;
+      &::placeholder {
+        color: $secondary-color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+    }
+    .filter {
+      cursor: pointer;
+    }
+  }
+  .all-products {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+}

@@ -9,52 +9,170 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 
 const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
-  { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
+  { id: "shopName", label: "Shop Name", minWidth: 170, align: "center" },
+  { id: "area", label: "Area", minWidth: 100, align: "center" },
   {
-    id: "population",
-    label: "Population",
+    id: "contactNumber",
+    label: "Contact Number",
     minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
+    align: "center",
   },
   {
-    id: "size",
-    label: "Size\u00a0(km\u00b2)",
+    id: "state",
+    label: "State",
     minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
+    align: "center",
   },
   {
-    id: "density",
-    label: "Density",
+    id: "time",
+    label: "Time",
     minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
+    align: "center",
+  },
+  {
+    id: "status",
+    label: "Status",
+    minWidth: 170,
+    align: "center",
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
 const rows = [
-  createData("India", "IN", 1324171354, 3287263),
-  createData("China", "CN", 1403500365, 9596961),
-  createData("Italy", "IT", 60483973, 301340),
-  createData("United States", "US", 327167434, 9833520),
-  createData("Canada", "CA", 37602103, 9984670),
-  createData("Australia", "AU", 25475400, 7692024),
-  createData("Germany", "DE", 83019200, 357578),
-  createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
+  {
+    id: 1,
+    shopName: "Super Mart",
+    area: "MG Road, Delhi",
+    contactNumber: "9876543210",
+    state: "Delhi",
+    time: "10:00 AM - 9:00 PM",
+    status: "Active",
+  },
+  {
+    id: 2,
+    shopName: "Fresh Basket",
+    area: "Sector 18, Noida",
+    contactNumber: "8765432109",
+    state: "Uttar Pradesh",
+    time: "9:00 AM - 8:00 PM",
+    status: "Active",
+  },
+  {
+    id: 3,
+    shopName: "Veggie Delight",
+    area: "HSR Layout, Bangalore",
+    contactNumber: "7654321098",
+    state: "Karnataka",
+    time: "8:00 AM - 8:00 PM",
+    status: "Inactive",
+  },
+  {
+    id: 4,
+    shopName: "The Bookstore",
+    area: "Park Street, Kolkata",
+    contactNumber: "6543210987",
+    state: "West Bengal",
+    time: "11:00 AM - 7:00 PM",
+    status: "Active",
+  },
+  {
+    id: 5,
+    shopName: "Tech World",
+    area: "Banjara Hills, Hyderabad",
+    contactNumber: "5432109876",
+    state: "Telangana",
+    time: "10:00 AM - 8:30 PM",
+    status: "Active",
+  },
+  {
+    id: 6,
+    shopName: "Fashion Hub",
+    area: "Church Street, Bangalore",
+    contactNumber: "4321098765",
+    state: "Karnataka",
+    time: "11:00 AM - 9:00 PM",
+    status: "Inactive",
+  },
+  {
+    id: 7,
+    shopName: "Daily Needs",
+    area: "Jayanagar, Bangalore",
+    contactNumber: "3210987654",
+    state: "Karnataka",
+    time: "9:30 AM - 8:30 PM",
+    status: "Active",
+  },
+  {
+    id: 8,
+    shopName: "Food Plaza",
+    area: "Salt Lake, Kolkata",
+    contactNumber: "2109876543",
+    state: "West Bengal",
+    time: "10:00 AM - 10:00 PM",
+    status: "Active",
+  },
+  {
+    id: 9,
+    shopName: "Trendy Looks",
+    area: "Sector 14, Gurugram",
+    contactNumber: "1098765432",
+    state: "Haryana",
+    time: "10:00 AM - 7:30 PM",
+    status: "Inactive",
+  },
+  {
+    id: 10,
+    shopName: "Mega Store",
+    area: "Anand Vihar, Delhi",
+    contactNumber: "9087654321",
+    state: "Delhi",
+    time: "9:00 AM - 9:00 PM",
+    status: "Active",
+  },
+  {
+    id: 11,
+    shopName: "Electro World",
+    area: "Velachery, Chennai",
+    contactNumber: "8076543210",
+    state: "Tamil Nadu",
+    time: "10:00 AM - 8:00 PM",
+    status: "Active",
+  },
+  {
+    id: 12,
+    shopName: "Bakers' Lane",
+    area: "Gachibowli, Hyderabad",
+    contactNumber: "7065432109",
+    state: "Telangana",
+    time: "9:00 AM - 7:00 PM",
+    status: "Inactive",
+  },
+  {
+    id: 13,
+    shopName: "Home Essentials",
+    area: "Sector 62, Noida",
+    contactNumber: "6054321098",
+    state: "Uttar Pradesh",
+    time: "9:00 AM - 8:30 PM",
+    status: "Active",
+  },
+  {
+    id: 14,
+    shopName: "Green Grocers",
+    area: "Rajouri Garden, Delhi",
+    contactNumber: "5043210987",
+    state: "Delhi",
+    time: "8:00 AM - 9:00 PM",
+    status: "Active",
+  },
+  {
+    id: 15,
+    shopName: "Sports World",
+    area: "Malad West, Mumbai",
+    contactNumber: "4032109876",
+    state: "Maharashtra",
+    time: "11:00 AM - 8:00 PM",
+    status: "Inactive",
+  },
 ];
 
 const DiscountTable = () => {
@@ -71,8 +189,8 @@ const DiscountTable = () => {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden"}}>
-      <TableContainer sx={{ height:"70vh"  }}>
+    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+      <TableContainer sx={{ height: "70vh" }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -80,7 +198,13 @@ const DiscountTable = () => {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{
+                    minWidth: column.minWidth,
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    color: "#2F4362",
+                    letterSpacing: "0.5px",
+                  }}
                 >
                   {column.label}
                 </TableCell>
@@ -96,10 +220,18 @@ const DiscountTable = () => {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === "number"
-                            ? column.format(value)
-                            : value}
+                        <TableCell
+                          key={column.id}
+                          align={column.align}
+                          sx={{
+                            letterSpacing: "0.8px",
+                            color: "#7D8FB3",
+                            fontSize: "12px",
+                            lineHeight: "20px",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {value}
                         </TableCell>
                       );
                     })}

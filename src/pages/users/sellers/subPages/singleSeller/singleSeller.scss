@@ -1,0 +1,46 @@
+@import "../../../../../app.scss";
+
+.main-page {
+  display: flex;
+  .single-sellers-page-main {
+    flex-grow: 1;
+    .right-action-div {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      .chat-card {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        p {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 19.2px;
+          color: #1f1f1f;
+        }
+      }
+      button {
+        background-color: #22bb33;
+        color: $white-color;
+        padding: 8px 12px;
+        font-family: Poppins;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 22.5px;
+        border-radius: 4px;
+      }
+    }
+    .single-sellers-page {
+      max-height: calc(100vh - 8vh);
+      overflow:auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      &::-webkit-scrollbar{
+        display: block;
+      }
+    }
+  }
+}

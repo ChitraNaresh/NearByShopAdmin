@@ -11,7 +11,7 @@ import requests from "../../assets/request.svg";
 import reports from "../../assets/report.svg";
 import blockLists from "../../assets/blockList.svg";
 import logout from "../../assets/logout.svg";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const allTabs = [
   {
@@ -59,13 +59,27 @@ const allTabs = [
     pathName: "/block-lists",
     icon: blockLists,
   },
+  {
+    name: "Packages",
+    pathName: "/packages",
+    icon: blockLists,
+  },
+  {
+    name: "Categories",
+    pathName: "/categories",
+    icon: blockLists,
+  },
 ];
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const handleTab = (pathName) => {
     navigate(pathName);
   };
+  const returnActiveTab = (tabName) =>
+    tabName === "/" ? pathname === "/" : pathname.startsWith(tabName);
+
   return (
     <div className="side-bar">
       <div className="logo-card">
@@ -75,7 +89,9 @@ const Sidebar = () => {
       <nav className="side-navbar">
         {allTabs.map((tab) => (
           <div
-            className="each-tab-card"
+            className={`${
+              returnActiveTab(tab.pathName) ? "active-tab" : ""
+            } each-tab-card`}
             onClick={() => handleTab(tab.pathName)}
           >
             <img src={tab.icon} alt="" />

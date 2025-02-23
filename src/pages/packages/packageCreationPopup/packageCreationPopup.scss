@@ -1,0 +1,25 @@
+@import "../../../app.scss";
+
+.package-creation-popup {
+  padding: 0px;
+  .fields-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .action-card {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    button {
+      font-weight: 600;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      font-size: 16px;
+      border-radius: 8px;
+      padding: 6px 10px;
+    }
+  }
+}
