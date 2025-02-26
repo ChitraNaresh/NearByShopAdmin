@@ -119,7 +119,7 @@ const CreateCategoryForm = ({
           categoryUid: editCategoryData._id,
         });
         if (response?.data) {
-          toast.success("Sub Category updated!");
+          toast.success("Category updated!");
         } else {
           toast.error("Something went wrong!");
         }
