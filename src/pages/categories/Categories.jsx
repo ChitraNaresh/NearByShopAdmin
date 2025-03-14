@@ -74,6 +74,7 @@ const Categories = () => {
   };
 
   const handleEdit = (categoryData) => {
+    console.log(categoryData,100)
     setEditCategoryData(categoryData);
     if (!showForm) {
       setShowForm(true);

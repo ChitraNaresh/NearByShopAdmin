@@ -8,6 +8,7 @@ import {
   useUpdateCategoryMutation,
   useUpdateSubCategoryMutation,
 } from "../../../apis&state/apis/categoriesApiSlice";
+import { useUploadImageMutation } from "../../../apis&state/apis/globalApiSlice";
 
 const categoryCreationFields = [
   {
@@ -26,6 +27,7 @@ const categoryCreationDefaultFields = {
   name: "",
   description: "",
   imageUrl: "",
+  file_uid: "",
 };
 
 const CreateCategoryForm = ({
@@ -40,6 +42,7 @@ const CreateCategoryForm = ({
   const [updateCategory] = useUpdateCategoryMutation();
   const [updateSubCategory] = useUpdateSubCategoryMutation();
   const [createSubCategory] = useCreateSubCategoryMutation();
+  const [uploadImage] = useUploadImageMutation();
   const [errors, setErrors] = useState({});
   const handleInput = async (inputObject) => {
     const { name, value } = inputObject.target;
@@ -131,8 +134,13 @@ const CreateCategoryForm = ({
 
   useEffect(() => {
     if (editCategoryData) {
-      const { name, description } = editCategoryData;
-      setCategoryCreationDetails((prev) => ({ ...prev, name, description }));
+      const { name, description, imageUrl } = editCategoryData;
+      setCategoryCreationDetails((prev) => ({
+        ...prev,
+        name,
+        description,
+        imageUrl,
+      }));
     }
   }, [editCategoryData]);
 
@@ -153,7 +161,55 @@ const CreateCategoryForm = ({
     }
   };
 
-  console.log(categoryCreationDetails)
+  const handleImageChange = async (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile && selectedFile.size > 1024 * 1024) {
+      return toast.error("File size should not exceed 1 MB!");
+    }
+    if (
+      selectedFile.name.endsWith(".jpg") ||
+      selectedFile.name.endsWith(".jpeg") ||
+      selectedFile.name.endsWith(".png") ||
+      selectedFile.name.endsWith(".webp")
+    ) {
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        // setSelectedImage(event.target.result);
+      };
+      reader.readAsDataURL(selectedFile);
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+
+      if (selectedFile) {
+        // const imageUrl = URL.createObjectURL(selectedFile);
+        // setSelectedImage(imageUrl);
+
+        const formData = new FormData();
+        formData.append("file", selectedFile);
+        try {
+          const response = await uploadImage({
+            data: formData,
+            type: "OTHER",
+          });
+          if (response?.data) {
+            const { fileUrl, file_uid } = response.data.data;
+            setCategoryCreationDetails((prev) => ({
+              ...prev,
+              imageUrl: fileUrl,
+              file_uid,
+            }));
+            toast.success("Successfully uploaded your profile image!");
+          }
+        } catch (error) {
+          toast.error("Something went wrong");
+        }
+      }
+    } else {
+      toast.error("It will allow .jpg, .jpeg, .png, .webp formats only.");
+    }
+  };
+
+  console.log(categoryCreationDetails);
 
   return (
     <div className="package-creation-popup">
@@ -174,7 +230,7 @@ const CreateCategoryForm = ({
           );
         })}
         <div className="category-image-card">
-          <input type="file" onChange={handleFileChange}/>
+          <input type="file" onChange={handleImageChange} />
           {categoryCreationDetails.image ? (
             <img src={categoryCreationDetails.image} alt="" />
           ) : (
