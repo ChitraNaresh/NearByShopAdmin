@@ -6,6 +6,7 @@ import { usersApiSlice } from "../apis&state/apis/usersApiSlice";
 import { shopsApiSlice } from "../apis&state/apis/shopsApiSlice";
 import { packagesApiSlice } from "../apis&state/apis/packagesApiSlice";
 import { categoriesApiSlice } from "../apis&state/apis/categoriesApiSlice";
+import { globalApiSlice } from "../apis&state/apis/globalApiSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
     [shopsApiSlice.reducerPath]: shopsApiSlice.reducer,
     [packagesApiSlice.reducerPath]: packagesApiSlice.reducer,
     [categoriesApiSlice.reducerPath]: categoriesApiSlice.reducer,
+    [globalApiSlice.reducerPath]: globalApiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
@@ -22,7 +24,8 @@ const store = configureStore({
       .concat(usersApiSlice.middleware)
       .concat(shopsApiSlice.middleware)
       .concat(packagesApiSlice.middleware)
-      .concat(categoriesApiSlice.middleware),
+      .concat(categoriesApiSlice.middleware)
+      .concat(globalApiSlice.middleware),
 });
 
 export default store;
